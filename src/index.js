@@ -1,6 +1,10 @@
 import app from "./app.js";
-import { PORT } from "./config.js";
 import { connectDB } from "./db.js";
+import { config } from "dotenv";
+
+config();
+
+export const PORT = process.env.PORT;
 
 connectDB();
 app.listen(PORT, () => {
